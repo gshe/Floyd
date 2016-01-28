@@ -1,0 +1,54 @@
+//
+//  Floyd-PrefixHeader.pch
+//  Floyd
+//
+//  Created by admin on 16/1/4.
+//  Copyright © 2016年 George She. All rights reserved.
+//
+
+#ifndef Floyd_PrefixHeader_pch
+#define Floyd_PrefixHeader_pch
+#import "NimbusModels.h"
+#import "NimbusCore.h"
+#import <CoreLocation/CoreLocation.h>
+#import "MBProgressHUD.h"
+#import "JsonModel.h"
+#import "masonry.h"
+#import "WeiBoInfoManager.h"
+#import "FDViewController.h"
+#import "FDTableViewController.h"
+#import "NSString+Extents.h"
+#import "FDFontMacro.h"
+#import "WeiboUser.h"
+#import "NIActions.h"
+#import "UIColor+Extents.h"
+#import "UserManager.h"
+
+#define SinaWeiboV2AppKey @"3375308274"
+#define WIDTH(v) (v).frame.size.width
+#define HEIGHT(v) (v).frame.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+// Include any system framework and library headers here that should be included
+// in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of
+// your targets to reference this file.
+
+#undef MMSingletonInterface
+#define MMSingletonInterface +(instancetype)sharedInstance;
+
+#undef MMSingletonImplementation
+#define MMSingletonImplementation                                              \
+  +(instancetype)sharedInstance {                                              \
+    static dispatch_once_t once;                                               \
+    static id __singleton__ = nil;                                             \
+    dispatch_once(&once, ^{                                                    \
+      __singleton__ = [[self alloc] init];                                     \
+    });                                                                        \
+    return __singleton__;                                                      \
+  }
+
+#undef MMInstance
+#define MMInstance(CLASSNAME) [CLASSNAME sharedInstance]
+
+#endif /* Floyd_PrefixHeader_pch */
