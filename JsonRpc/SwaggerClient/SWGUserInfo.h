@@ -25,4 +25,12 @@
 
 @property(nonatomic) NSString* weiboToken;
 
+@property(nonatomic) NSString* avatarKey;
+
+@property(nonatomic) NSString* avatarHash;
+
+@property(nonatomic) NSDate* created;
+
+@property(nonatomic) NSDate* modified;
+
 @end

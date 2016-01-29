@@ -37,6 +37,25 @@
 
 ///
 ///
+/// update user avatar
+/// user information.
+///
+/// @param userId 
+/// @param avatarKey 
+/// @param avatarHash 
+/// 
+///
+/// @return SWGUserInfo*
+-(NSNumber*) updateUserAvatarGetWithCompletionBlock :(NSString*) userId 
+     avatarKey:(NSString*) avatarKey 
+     avatarHash:(NSString*) avatarHash 
+    
+    completionHandler: (void (^)(SWGUserInfo* output, NSError* error))completionBlock;
+    
+
+
+///
+///
 /// update user birthday
 /// user information.
 ///

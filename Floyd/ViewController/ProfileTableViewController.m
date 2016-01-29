@@ -12,6 +12,7 @@
 #import "NIActions.h"
 #import "WeiboUserInfoViewController.h"
 #import "QiniuFileUploaderViewController.h"
+#import "UserDetailViewController.h"
 
 @interface ProfileTableViewController () <UIAlertViewDelegate>
 @property(nonatomic, strong) NITableViewActions *action;
@@ -41,13 +42,29 @@
   NSMutableArray *tableContents = [NSMutableArray new];
   [tableContents addObject:@"用户信息"];
   if ([UserManager sharedInstance].isLoggedIn) {
+    NSString *userTitle = nil;
+    if ([UserManager sharedInstance].userName) {
+      userTitle = [UserManager sharedInstance].userName;
+    } else {
+      userTitle = @"用户名未设置";
+    }
+    NICellObject *userInfoObj = [self.action
+        attachToObject:[NITitleCellObject
+                           objectWithTitle:userTitle
+                                     image:[UIImage imageNamed:@"me"]]
+           tapSelector:@selector(userInfoTapped)];
+    [tableContents addObject:userInfoObj];
+
     if ([UserManager sharedInstance].wbUserInfo) {
       NICellObject *userInfoObj = [self.action
-          attachToObject:[NITitleCellObject
-                             objectWithTitle:[UserManager sharedInstance]
-                                                 .wbUserInfo.name
-                                       image:[UIImage imageNamed:@"LOGO"]]
-             tapSelector:@selector(userInfoTapped)];
+          attachToObject:
+              [NITitleCellObject
+                  objectWithTitle:
+                      [NSString stringWithFormat:@"关联微博：%@",
+                                                 [UserManager sharedInstance]
+                                                     .wbUserInfo.name]
+                            image:[UIImage imageNamed:@"LOGO"]]
+             tapSelector:@selector(weiboUserInfoTapped)];
       [tableContents addObject:userInfoObj];
     }
     NICellObject *logoutObj = [self.action
@@ -97,6 +114,12 @@
 }
 
 - (void)userInfoTapped {
+  UserDetailViewController *vc =
+      [[UserDetailViewController alloc] initWithNibName:nil bundle:nil];
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)weiboUserInfoTapped {
   WeiboUserInfoViewController *vc =
       [[WeiboUserInfoViewController alloc] initWithNibName:nil bundle:nil];
   vc.userInfo = [UserManager sharedInstance].wbUserInfo;

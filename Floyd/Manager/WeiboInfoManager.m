@@ -36,8 +36,7 @@
   WBAuthorizeRequest *request = [WBAuthorizeRequest request];
   request.redirectURI = kRedirectURI;
   request.scope = @"all";
-  request.userInfo =
-      [NSDictionary dictionaryWithObjectsAndKeys:self, @"From", nil];
+  request.userInfo = nil;
   [WeiboSDK sendRequest:request];
 }
 

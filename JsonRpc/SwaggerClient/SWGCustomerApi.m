@@ -158,6 +158,117 @@ static SWGCustomerApi* singletonAPI = nil;
 }
 
 ///
+/// update user avatar
+/// user information.
+///  @param userId 
+///
+///  @param avatarKey 
+///
+///  @param avatarHash 
+///
+///  @returns SWGUserInfo*
+///
+-(NSNumber*) updateUserAvatarGetWithCompletionBlock: (NSString*) userId
+         avatarKey: (NSString*) avatarKey
+         avatarHash: (NSString*) avatarHash
+        
+        completionHandler: (void (^)(SWGUserInfo* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'userId' is set
+    if (userId == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `userId` when calling `updateUserAvatarGet`"];
+    }
+    
+    // verify the required parameter 'avatarKey' is set
+    if (avatarKey == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `avatarKey` when calling `updateUserAvatarGet`"];
+    }
+    
+    // verify the required parameter 'avatarHash' is set
+    if (avatarHash == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `avatarHash` when calling `updateUserAvatarGet`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/updateUserAvatar"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (userId != nil) {
+        
+        queryParams[@"userId"] = userId;
+    }
+    if (avatarKey != nil) {
+        
+        queryParams[@"avatarKey"] = avatarKey;
+    }
+    if (avatarHash != nil) {
+        
+        queryParams[@"avatarHash"] = avatarHash;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SWGApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SWGApiClient selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SWGUserInfo*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SWGUserInfo*)data, error);
+              }
+          ];
+}
+
+///
 /// update user birthday
 /// user information.
 ///  @param userId 

@@ -222,10 +222,7 @@
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
   if ([response isKindOfClass:WBAuthorizeResponse.class]) {
     WBAuthorizeResponse *authResponse = (WBAuthorizeResponse *)response;
-    WeiboInfoManager *manager = response.userInfo[@"From"];
-    if ([manager isKindOfClass:[WeiboInfoManager class]]) {
-      [manager handleWBAuthorizeResponse:authResponse];
-    }
+    [[UserManager sharedInstance] handleWBAuthorizeResponse:authResponse];
   }
 }
 @end

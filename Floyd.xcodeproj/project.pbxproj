@@ -24,7 +24,6 @@
 		842C9D421C3A72B6003FAEBD /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9D411C3A72B6003FAEBD /* SettingsTableViewController.m */; };
 		842C9D451C3B68F6003FAEBD /* cityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842C9D441C3B68F6003FAEBD /* cityList.plist */; };
 		842C9D481C3B6C37003FAEBD /* CitySelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9D471C3B6C37003FAEBD /* CitySelectTableViewController.m */; };
-		842C9D4B1C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9D4A1C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.m */; };
 		842C9D511C3B9E46003FAEBD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C9D501C3B9E46003FAEBD /* CoreLocation.framework */; };
 		842C9D671C3BB25D003FAEBD /* CityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9D641C3BB25D003FAEBD /* CityManager.m */; };
 		842C9D681C3BB25D003FAEBD /* WeatherLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9D661C3BB25D003FAEBD /* WeatherLocationManager.m */; };
@@ -48,6 +47,12 @@
 		846AD6FB1C5089DF009F9BF5 /* NewsChannelSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AD6FA1C5089DF009F9BF5 /* NewsChannelSelectViewController.m */; };
 		846AD6FE1C50AA50009F9BF5 /* QiniuFileUploaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AD6FD1C50AA4F009F9BF5 /* QiniuFileUploaderViewController.m */; };
 		846B20BA1C59B43C003193E0 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20B91C59B43C003193E0 /* UserManager.m */; };
+		846B20BD1C5A10CA003193E0 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20BC1C5A10CA003193E0 /* UserDetailViewController.m */; };
+		846B20C01C5A1595003193E0 /* XMDateSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20BF1C5A1595003193E0 /* XMDateSelectView.m */; };
+		846B20C31C5A1797003193E0 /* TextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20C21C5A1797003193E0 /* TextEditViewController.m */; };
+		846B20C81C5A21AA003193E0 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20C71C5A21AA003193E0 /* VPImageCropperViewController.m */; };
+		846B20CB1C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20CA1C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.m */; };
+		846B20CE1C5A21EA003193E0 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B20CD1C5A21EA003193E0 /* NewsListViewController.m */; };
 		846CFBEA1C4C884B007AF720 /* RepostAndCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846CFBE91C4C884B007AF720 /* RepostAndCommentViewController.m */; };
 		846CFBED1C4C8882007AF720 /* CommetsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846CFBEC1C4C8882007AF720 /* CommetsListViewController.m */; };
 		846CFBF01C4C95CA007AF720 /* WeiboRepostList.m in Sources */ = {isa = PBXBuildFile; fileRef = 846CFBEF1C4C95CA007AF720 /* WeiboRepostList.m */; };
@@ -56,7 +61,6 @@
 		848353641C3F91B1007F4AD2 /* SinaRSSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353631C3F91B1007F4AD2 /* SinaRSSApi.m */; };
 		848353671C3F92D2007F4AD2 /* RSSSubChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353661C3F92D2007F4AD2 /* RSSSubChannel.m */; };
 		8483536E1C3F934B007F4AD2 /* RSSRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483536D1C3F934B007F4AD2 /* RSSRoot.m */; };
-		848353711C3F9BDD007F4AD2 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353701C3F9BDD007F4AD2 /* NewsListViewController.m */; };
 		848353741C3F9F67007F4AD2 /* RSSChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353731C3F9F67007F4AD2 /* RSSChannel.m */; };
 		848353771C3FA009007F4AD2 /* RSSItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353761C3FA009007F4AD2 /* RSSItemModel.m */; };
 		8483537A1C3FA177007F4AD2 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 848353791C3FA177007F4AD2 /* NewsItemCell.m */; };
@@ -140,8 +144,6 @@
 		842C9D441C3B68F6003FAEBD /* cityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityList.plist; sourceTree = "<group>"; };
 		842C9D461C3B6C37003FAEBD /* CitySelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CitySelectTableViewController.h; path = ViewController/CitySelectTableViewController.h; sourceTree = "<group>"; };
 		842C9D471C3B6C37003FAEBD /* CitySelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CitySelectTableViewController.m; path = ViewController/CitySelectTableViewController.m; sourceTree = "<group>"; };
-		842C9D491C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
-		842C9D4A1C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
 		842C9D501C3B9E46003FAEBD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		842C9D631C3BB25D003FAEBD /* CityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityManager.h; sourceTree = "<group>"; };
 		842C9D641C3BB25D003FAEBD /* CityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityManager.m; sourceTree = "<group>"; };
@@ -187,6 +189,18 @@
 		846AD6FD1C50AA4F009F9BF5 /* QiniuFileUploaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiniuFileUploaderViewController.m; path = ViewController/QiniuFileUploaderViewController.m; sourceTree = "<group>"; };
 		846B20B81C59B43C003193E0 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		846B20B91C59B43C003193E0 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		846B20BB1C5A10CA003193E0 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = ViewController/UserDetailViewController.h; sourceTree = "<group>"; };
+		846B20BC1C5A10CA003193E0 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = ViewController/UserDetailViewController.m; sourceTree = "<group>"; };
+		846B20BE1C5A1595003193E0 /* XMDateSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDateSelectView.h; sourceTree = "<group>"; };
+		846B20BF1C5A1595003193E0 /* XMDateSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDateSelectView.m; sourceTree = "<group>"; };
+		846B20C11C5A1797003193E0 /* TextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEditViewController.h; path = ViewController/TextEditViewController.h; sourceTree = "<group>"; };
+		846B20C21C5A1797003193E0 /* TextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEditViewController.m; path = ViewController/TextEditViewController.m; sourceTree = "<group>"; };
+		846B20C61C5A21AA003193E0 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		846B20C71C5A21AA003193E0 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		846B20C91C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		846B20CA1C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		846B20CC1C5A21EA003193E0 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsListViewController.h; path = ViewController/NewsListViewController.h; sourceTree = "<group>"; };
+		846B20CD1C5A21EA003193E0 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsListViewController.m; path = ViewController/NewsListViewController.m; sourceTree = "<group>"; };
 		846CFBE81C4C884B007AF720 /* RepostAndCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepostAndCommentViewController.h; path = ViewController/RepostAndCommentViewController.h; sourceTree = "<group>"; };
 		846CFBE91C4C884B007AF720 /* RepostAndCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepostAndCommentViewController.m; path = ViewController/RepostAndCommentViewController.m; sourceTree = "<group>"; };
 		846CFBEB1C4C8882007AF720 /* CommetsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommetsListViewController.h; path = ViewController/CommetsListViewController.h; sourceTree = "<group>"; };
@@ -203,8 +217,6 @@
 		848353661C3F92D2007F4AD2 /* RSSSubChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSSubChannel.m; sourceTree = "<group>"; };
 		8483536C1C3F934B007F4AD2 /* RSSRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSRoot.h; sourceTree = "<group>"; };
 		8483536D1C3F934B007F4AD2 /* RSSRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSRoot.m; sourceTree = "<group>"; };
-		8483536F1C3F9BDD007F4AD2 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
-		848353701C3F9BDD007F4AD2 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 		848353721C3F9F67007F4AD2 /* RSSChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSChannel.h; sourceTree = "<group>"; };
 		848353731C3F9F67007F4AD2 /* RSSChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSChannel.m; sourceTree = "<group>"; };
 		848353751C3FA009007F4AD2 /* RSSItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItemModel.h; sourceTree = "<group>"; };
@@ -323,6 +335,8 @@
 		841EA1121C3F480F005BB9C1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				846B20BE1C5A1595003193E0 /* XMDateSelectView.h */,
+				846B20BF1C5A1595003193E0 /* XMDateSelectView.m */,
 				841EA1161C3F488B005BB9C1 /* XWindowStack.h */,
 				841EA1171C3F488B005BB9C1 /* XWindowStack.m */,
 				841EA1131C3F480F005BB9C1 /* PopupBaseView.h */,
@@ -358,6 +372,7 @@
 		842C9CFF1C3A7193003FAEBD /* Floyd */ = {
 			isa = PBXGroup;
 			children = (
+				846B20C41C5A21AA003193E0 /* 3rd */,
 				848353681C3F92DC007F4AD2 /* category */,
 				841EA1121C3F480F005BB9C1 /* view */,
 				841EA10E1C3F43C0005BB9C1 /* Utils */,
@@ -409,14 +424,14 @@
 		842C9D391C3A727B003FAEBD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				846B20CC1C5A21EA003193E0 /* NewsListViewController.h */,
+				846B20CD1C5A21EA003193E0 /* NewsListViewController.m */,
 				84E34DEA1C48CE2D002BB573 /* FDWebViewController.h */,
 				84E34DEB1C48CE2D002BB573 /* FDWebViewController.m */,
 				84E34DE71C48CE15002BB573 /* WeiboDetailViewController.h */,
 				84E34DE81C48CE15002BB573 /* WeiboDetailViewController.m */,
 				8469FCBB1C4F744500CF2F3F /* WeiboDetailExViewController.h */,
 				8469FCBC1C4F744500CF2F3F /* WeiboDetailExViewController.m */,
-				842C9D491C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.h */,
-				842C9D4A1C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.m */,
 				842C9D361C3A7263003FAEBD /* WeatherViewController.h */,
 				842C9D371C3A7263003FAEBD /* WeatherViewController.m */,
 				842C9D3A1C3A7296003FAEBD /* NewsViewController.h */,
@@ -431,8 +446,6 @@
 				844FFCDA1C3E43FE0039E013 /* FDTableViewController.m */,
 				844FFCE21C3E52A40039E013 /* MoreWeatherViewController.h */,
 				844FFCE31C3E52A40039E013 /* MoreWeatherViewController.m */,
-				8483536F1C3F9BDD007F4AD2 /* NewsListViewController.h */,
-				848353701C3F9BDD007F4AD2 /* NewsListViewController.m */,
 				84525AB01C44FE8F0044EC57 /* WeiboUserInfoViewController.h */,
 				84525AB11C44FE8F0044EC57 /* WeiboUserInfoViewController.m */,
 				84E34D751C479A85002BB573 /* UsersListViewController.h */,
@@ -459,6 +472,10 @@
 				846AD6FA1C5089DF009F9BF5 /* NewsChannelSelectViewController.m */,
 				846AD6FC1C50AA4F009F9BF5 /* QiniuFileUploaderViewController.h */,
 				846AD6FD1C50AA4F009F9BF5 /* QiniuFileUploaderViewController.m */,
+				846B20BB1C5A10CA003193E0 /* UserDetailViewController.h */,
+				846B20BC1C5A10CA003193E0 /* UserDetailViewController.m */,
+				846B20C11C5A1797003193E0 /* TextEditViewController.h */,
+				846B20C21C5A1797003193E0 /* TextEditViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -466,6 +483,8 @@
 		842C9D621C3BB25D003FAEBD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				846B20C91C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.h */,
+				846B20CA1C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.m */,
 				842C9D631C3BB25D003FAEBD /* CityManager.h */,
 				842C9D641C3BB25D003FAEBD /* CityManager.m */,
 				842C9D651C3BB25D003FAEBD /* WeatherLocationManager.h */,
@@ -566,6 +585,23 @@
 				8469FCBF1C4F763A00CF2F3F /* WeiboActionCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		846B20C41C5A21AA003193E0 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				846B20C51C5A21AA003193E0 /* VPImageCropper */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		846B20C51C5A21AA003193E0 /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				846B20C61C5A21AA003193E0 /* VPImageCropperViewController.h */,
+				846B20C71C5A21AA003193E0 /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
 			sourceTree = "<group>";
 		};
 		848353611C3F91B1007F4AD2 /* NewsApi */ = {
@@ -777,7 +813,6 @@
 				844FFCD11C3E38F30039E013 /* Index.m in Sources */,
 				846AD6FE1C50AA50009F9BF5 /* QiniuFileUploaderViewController.m in Sources */,
 				842C9D421C3A72B6003FAEBD /* SettingsTableViewController.m in Sources */,
-				842C9D4B1C3B6F99003FAEBD /* MMExampleDrawerVisualStateManager.m in Sources */,
 				84E34DC81C4885FD002BB573 /* MyWeiboViewController.m in Sources */,
 				844FFCD81C3E3C510039E013 /* WeatherInfoCell.m in Sources */,
 				842C9D771C3BB3C3003FAEBD /* Weather.m in Sources */,
@@ -789,8 +824,8 @@
 				846CFBF31C4C981A007AF720 /* RepostListViewController.m in Sources */,
 				842C9D711C3BB35C003FAEBD /* CityModel.m in Sources */,
 				8483537A1C3FA177007F4AD2 /* NewsItemCell.m in Sources */,
+				846B20CB1C5A21DD003193E0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				842C9D051C3A7193003FAEBD /* AppDelegate.m in Sources */,
-				848353711C3F9BDD007F4AD2 /* NewsListViewController.m in Sources */,
 				846B20BA1C59B43C003193E0 /* UserManager.m in Sources */,
 				848353771C3FA009007F4AD2 /* RSSItemModel.m in Sources */,
 				848353641C3F91B1007F4AD2 /* SinaRSSApi.m in Sources */,
@@ -799,11 +834,14 @@
 				842C9D381C3A7263003FAEBD /* WeatherViewController.m in Sources */,
 				846CFBED1C4C8882007AF720 /* CommetsListViewController.m in Sources */,
 				84B528221C4E1E6000AE8149 /* WeiboFavoritesList.m in Sources */,
+				846B20C81C5A21AA003193E0 /* VPImageCropperViewController.m in Sources */,
 				84E34DD71C48A3D0002BB573 /* WeiboInfoUser.m in Sources */,
 				84E34DEC1C48CE2D002BB573 /* FDWebViewController.m in Sources */,
 				848353671C3F92D2007F4AD2 /* RSSSubChannel.m in Sources */,
 				842C9D671C3BB25D003FAEBD /* CityManager.m in Sources */,
+				846B20C31C5A1797003193E0 /* TextEditViewController.m in Sources */,
 				84E34D7D1C479DDA002BB573 /* WeiboUserList.m in Sources */,
+				846B20C01C5A1595003193E0 /* XMDateSelectView.m in Sources */,
 				844FFCE71C3E5E740039E013 /* CitySelectCell.m in Sources */,
 				8450C56B1C3DFD0500FC3D3E /* WeiboInfoManager.m in Sources */,
 				848353841C3FB307007F4AD2 /* XMDeveloperHelper.m in Sources */,
@@ -821,6 +859,7 @@
 				846AD6FB1C5089DF009F9BF5 /* NewsChannelSelectViewController.m in Sources */,
 				844FFCE11C3E49C30039E013 /* IndexInfoCell.m in Sources */,
 				844FFCD41C3E39020039E013 /* IndexModel.m in Sources */,
+				846B20BD1C5A10CA003193E0 /* UserDetailViewController.m in Sources */,
 				84525AB21C44FE8F0044EC57 /* WeiboUserInfoViewController.m in Sources */,
 				84E34DEF1C48D331002BB573 /* FDViewController.m in Sources */,
 				84E34DE01C48CD7C002BB573 /* ForwardWeiboViewController.m in Sources */,
@@ -839,6 +878,7 @@
 				842C9D681C3BB25D003FAEBD /* WeatherLocationManager.m in Sources */,
 				84E34DF81C48F281002BB573 /* WeiboCommentCell.m in Sources */,
 				84E34DE91C48CE15002BB573 /* WeiboDetailViewController.m in Sources */,
+				846B20CE1C5A21EA003193E0 /* NewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

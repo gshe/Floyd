@@ -19,7 +19,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"birthday": @"birthday", @"name": @"name", @"weiboId": @"weiboId", @"weiboToken": @"weiboToken" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"_id": @"_id", @"birthday": @"birthday", @"name": @"name", @"weiboId": @"weiboId", @"weiboToken": @"weiboToken", @"avatarKey": @"avatarKey", @"avatarHash": @"avatarHash", @"created": @"created", @"modified": @"modified" }];
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"birthday", @"name", @"weiboId", @"weiboToken"];
+  NSArray *optionalProperties = @[@"_id", @"birthday", @"name", @"weiboId", @"weiboToken", @"avatarKey", @"avatarHash", @"created", @"modified"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

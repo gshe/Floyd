@@ -9,6 +9,12 @@
 #import "FDViewController.h"
 
 @implementation FDViewController
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.view.backgroundColor = [UIColor whiteColor];
+}
+
 #pragma Action
 - (void)showError:(NSError *)error {
   if (error) {
@@ -19,6 +25,6 @@
         cancelButtonTitle:@"确定"
         otherButtonTitles:nil, nil];
     [alert show];
-        }
+  }
 }
 @end
