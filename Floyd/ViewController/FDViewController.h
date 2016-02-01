@@ -10,4 +10,7 @@
 
 @interface FDViewController : UIViewController
 - (void)showError:(NSError *)error;
+
+- (void)showHUD;
+- (void)hideAllHUDs;
 @end

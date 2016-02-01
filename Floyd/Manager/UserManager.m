@@ -7,7 +7,7 @@
 //
 
 #import "UserManager.h"
-#import "SWGCustomerApi.h"
+#import "SWGICustomerApi.h"
 
 #define kUserId @"userId"
 #define kUserName @"userName"
@@ -66,7 +66,7 @@ NSString *const kUserDidOAuthNotification = @"kUserDidOAuthNotification";
     _wbManager = [[WeiboInfoManager alloc] init];
   }
   if (_userId) {
-    [[SWGCustomerApi sharedAPI]
+    [[SWGICustomerApi sharedAPI]
         userByIdGetWithCompletionBlock:_userId
                      completionHandler:^(SWGUserInfo *output, NSError *error) {
                        if (!error) {
@@ -99,7 +99,7 @@ NSString *const kUserDidOAuthNotification = @"kUserDidOAuthNotification";
         [[NSUserDefaults standardUserDefaults] setObject:_weiboId
                                                   forKey:kWeiboUserId];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [[SWGCustomerApi sharedAPI]
+        [[SWGICustomerApi sharedAPI]
             associateUserWithWeiboIdGetWithCompletionBlock:
                 _weiboId completionHandler:^(SWGUserInfo *output,
                                              NSError *error) {
@@ -209,9 +209,7 @@ NSString *const kUserDidOAuthNotification = @"kUserDidOAuthNotification";
 
 - (NSString *)userAvatarUrl {
   if (_userAvatar) {
-    return [NSString
-        stringWithFormat:@"http://7xqbyp.com1.z0.glb.clouddn.com/%@-medium",
-                         _userAvatar];
+    return QINIU_FILE_URL_MEDIUM(_userAvatar);
   } else {
     return nil;
   }

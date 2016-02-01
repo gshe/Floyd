@@ -51,4 +51,20 @@
 #undef MMInstance
 #define MMInstance(CLASSNAME) [CLASSNAME sharedInstance]
 
+#define QINIU_FILE_URL_SMALL(hash) [NSString                                    \
+			stringWithFormat:@"http://7xqbyp.com1.z0.glb.clouddn.com/%@-samll",\
+			hash];
+
+#define QINIU_FILE_URL_MEDIUM(hash) [NSString                                    \
+stringWithFormat:@"http://7xqbyp.com1.z0.glb.clouddn.com/%@-medium",\
+hash];
+
+#define QINIU_FILE_URL_LARGE(hash) [NSString                                    \
+stringWithFormat:@"http://7xqbyp.com1.z0.glb.clouddn.com/%@-large",\
+hash];
+
+#define QINIU_FILE_URL_ORIGINAL(hash) [NSString                                    \
+stringWithFormat:@"http://7xqbyp.com1.z0.glb.clouddn.com/%@",\
+hash];
+
 #endif /* Floyd_PrefixHeader_pch */

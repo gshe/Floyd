@@ -14,6 +14,8 @@
 
 #import "SWGTokenInfo.h"
 #import "SWGUserInfo.h"
+#import "SWGAlbumInfo.h"
+#import "SWGPhotoInfo.h"
 #import "SWGError.h"
 
 

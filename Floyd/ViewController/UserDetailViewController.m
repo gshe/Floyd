@@ -10,10 +10,10 @@
 #import "XMDateSelectView.h"
 #import "UIImageView+WebCache.h"
 #import "TextEditViewController.h"
-#import "SWGCustomerApi.h"
+#import "SWGICustomerApi.h"
 #import "VPImageCropperViewController.h"
-#import "qiniuSdk.h"
-#import "SWGFileApi.h"
+#import "SWGIFileApi.h"
+#import "QiniuFileUploadManager.h"
 
 #define ORIGINAL_MAX_WIDTH 640.0f
 
@@ -25,23 +25,15 @@
 @property(nonatomic, strong) UIView *tableHeaderView;
 @property(nonatomic, strong) NSDateFormatter *formater;
 @property(nonatomic, strong) UIImageView *avatarImage;
-@property(nonatomic, strong) QNUploadManager *upManager;
 @end
 
 @implementation UserDetailViewController
 - (void)viewDidLoad {
   [super viewDidLoad];
-  NSError *errorNew = nil;
-  QNFileRecorder *file = [QNFileRecorder
-      fileRecorderWithFolder:[NSTemporaryDirectory()
-                                 stringByAppendingString:@"qiniu"]
-                       error:&errorNew];
-  NSLog(@"recorder error %@", errorNew);
-  _upManager = [[QNUploadManager alloc] initWithRecorder:file];
 
   self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
   _formater = [[NSDateFormatter alloc] init];
-  _formater.dateFormat = @"yyyy-mm-dd";
+  _formater.dateFormat = @"yyyy-MM-dd";
   [self createHeaderView];
   [self refreshUI];
 }
@@ -132,7 +124,7 @@
 
 - (void)changeBirthday:(NSDate *)selectedDate {
   NSString *birthday = [_formater stringFromDate:selectedDate];
-  [[SWGCustomerApi sharedAPI]
+  [[SWGICustomerApi sharedAPI]
       updateUserBirthdayGetWithCompletionBlock:[UserManager sharedInstance]
                                                    .userId
                                   userBirthday:birthday
@@ -329,7 +321,7 @@
 #pragma TextEditViewControllerDelegate
 - (void)TextEditVC:(TextEditViewController *)vc
        textChanged:(NSString *)newText {
-  [[SWGCustomerApi sharedAPI]
+  [[SWGICustomerApi sharedAPI]
       updateUserNameGetWithCompletionBlock:[UserManager sharedInstance].userId
                                   userName:newText
                          completionHandler:^(SWGUserInfo *output,
@@ -400,31 +392,20 @@
 
 #pragma Avatar Upload
 - (void)uploadAvatar:(UIImage *)image {
-  [[SWGFileApi sharedAPI]
-      uploadTokenGetWithCompletionBlock:^(SWGTokenInfo *output,
-                                          NSError *error) {
-        if (error) {
-          [self showError:error];
-          return;
-        }
-
-        NSString *uploadToken = output.token;
-        NSString *uuidKey = [self uuidImage];
-        NSData *data = UIImagePNGRepresentation(image);
-        [_upManager putData:data
-                        key:uuidKey
-                      token:uploadToken
-                   complete:^(QNResponseInfo *info, NSString *key,
-                              NSDictionary *resp) {
-                     if ([info isOK]) {
-                       [self associateAvatar:uuidKey hash:resp[@"hash"]];
-                     }
-                   } option:nil];
-      }];
+  QiniuFileUploadManager *manager = [[QiniuFileUploadManager alloc] init];
+  [manager
+      uploadImageToServce:image
+       withCompletedBlock:^(NSString *key, NSString *hash, NSError *error) {
+         if (key && !error) {
+           [self associateAvatar:key hash:hash];
+         } else {
+           [self showError:error];
+         }
+       }];
 }
 
 - (void)associateAvatar:(NSString *)avatarKey hash:(NSString *)avatarHash {
-  [[SWGCustomerApi sharedAPI]
+  [[SWGICustomerApi sharedAPI]
       updateUserAvatarGetWithCompletionBlock:[UserManager sharedInstance].userId
                                    avatarKey:avatarKey
                                   avatarHash:avatarHash

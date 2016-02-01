@@ -11,15 +11,15 @@
  * Do not edit the class manually.
  */
 
-@interface SWGCustomerApi: NSObject
+@interface SWGICustomerApi: NSObject
 
 @property(nonatomic, assign)SWGApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(SWGCustomerApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(SWGCustomerApi*) sharedAPI;
++(SWGICustomerApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(SWGICustomerApi*) sharedAPI;
 ///
 ///
 /// associate user information

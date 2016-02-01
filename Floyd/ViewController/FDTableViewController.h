@@ -13,4 +13,6 @@
 - (void)setTableData:(NSArray *)tableCells;
 
 - (void)showError:(NSError *)error;
+- (void)showHUD;
+- (void)hideAllHUDs;
 @end

@@ -11,15 +11,15 @@
  * Do not edit the class manually.
  */
 
-@interface SWGFileApi: NSObject
+@interface SWGIFileApi: NSObject
 
 @property(nonatomic, assign)SWGApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(SWGFileApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(SWGFileApi*) sharedAPI;
++(SWGIFileApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(SWGIFileApi*) sharedAPI;
 ///
 ///
 /// qiniu uoload token

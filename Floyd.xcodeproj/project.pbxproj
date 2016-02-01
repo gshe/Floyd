@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		27D92A03569F339EEBCDC88F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5E704493A497B6EADA432A /* libPods.a */; };
+		840AF33B1C5B67D2009BFADE /* AlbumPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AF33A1C5B67D2009BFADE /* AlbumPhotoViewController.m */; };
+		840AF33E1C5B6C14009BFADE /* QiniuFileUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AF33D1C5B6C14009BFADE /* QiniuFileUploadManager.m */; };
+		840AF3411C5B718E009BFADE /* PhotoInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AF3401C5B718E009BFADE /* PhotoInfoCell.m */; };
+		840E5DC71C5B40230055F56D /* MyAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E5DC61C5B40230055F56D /* MyAlbumsViewController.m */; };
+		840E5DCA1C5B40E50055F56D /* AlbumInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E5DC91C5B40E50055F56D /* AlbumInfoCell.m */; };
+		840E5DCD1C5B44000055F56D /* NewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E5DCC1C5B44000055F56D /* NewAlbumViewController.m */; };
 		841EA1111C3F43C0005BB9C1 /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1101C3F43C0005BB9C1 /* base64.m */; };
 		841EA1151C3F480F005BB9C1 /* PopupBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1141C3F480F005BB9C1 /* PopupBaseView.m */; };
 		841EA1181C3F488B005BB9C1 /* XWindowStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1171C3F488B005BB9C1 /* XWindowStack.m */; };
@@ -111,6 +117,18 @@
 		2D69107DC0551AFE03CFA802 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		35F6296DC3FAF45C8A1E7A5E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A5E704493A497B6EADA432A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		840AF3391C5B67D2009BFADE /* AlbumPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPhotoViewController.h; path = ViewController/AlbumPhotoViewController.h; sourceTree = "<group>"; };
+		840AF33A1C5B67D2009BFADE /* AlbumPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPhotoViewController.m; path = ViewController/AlbumPhotoViewController.m; sourceTree = "<group>"; };
+		840AF33C1C5B6C14009BFADE /* QiniuFileUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuFileUploadManager.h; sourceTree = "<group>"; };
+		840AF33D1C5B6C14009BFADE /* QiniuFileUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuFileUploadManager.m; sourceTree = "<group>"; };
+		840AF33F1C5B718E009BFADE /* PhotoInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoCell.h; sourceTree = "<group>"; };
+		840AF3401C5B718E009BFADE /* PhotoInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoCell.m; sourceTree = "<group>"; };
+		840E5DC51C5B40230055F56D /* MyAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAlbumsViewController.h; path = ViewController/MyAlbumsViewController.h; sourceTree = "<group>"; };
+		840E5DC61C5B40230055F56D /* MyAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAlbumsViewController.m; path = ViewController/MyAlbumsViewController.m; sourceTree = "<group>"; };
+		840E5DC81C5B40E50055F56D /* AlbumInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumInfoCell.h; sourceTree = "<group>"; };
+		840E5DC91C5B40E50055F56D /* AlbumInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumInfoCell.m; sourceTree = "<group>"; };
+		840E5DCB1C5B44000055F56D /* NewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewAlbumViewController.h; path = ViewController/NewAlbumViewController.h; sourceTree = "<group>"; };
+		840E5DCC1C5B44000055F56D /* NewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewAlbumViewController.m; path = ViewController/NewAlbumViewController.m; sourceTree = "<group>"; };
 		841EA10F1C3F43C0005BB9C1 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
 		841EA1101C3F43C0005BB9C1 /* base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = base64.m; sourceTree = "<group>"; };
 		841EA1131C3F480F005BB9C1 /* PopupBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupBaseView.h; sourceTree = "<group>"; };
@@ -476,6 +494,12 @@
 				846B20BC1C5A10CA003193E0 /* UserDetailViewController.m */,
 				846B20C11C5A1797003193E0 /* TextEditViewController.h */,
 				846B20C21C5A1797003193E0 /* TextEditViewController.m */,
+				840E5DC51C5B40230055F56D /* MyAlbumsViewController.h */,
+				840E5DC61C5B40230055F56D /* MyAlbumsViewController.m */,
+				840E5DCB1C5B44000055F56D /* NewAlbumViewController.h */,
+				840E5DCC1C5B44000055F56D /* NewAlbumViewController.m */,
+				840AF3391C5B67D2009BFADE /* AlbumPhotoViewController.h */,
+				840AF33A1C5B67D2009BFADE /* AlbumPhotoViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -493,6 +517,8 @@
 				8450C56A1C3DFD0500FC3D3E /* WeiboInfoManager.m */,
 				846B20B81C59B43C003193E0 /* UserManager.h */,
 				846B20B91C59B43C003193E0 /* UserManager.m */,
+				840AF33C1C5B6C14009BFADE /* QiniuFileUploadManager.h */,
+				840AF33D1C5B6C14009BFADE /* QiniuFileUploadManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -563,6 +589,8 @@
 		844FFCD51C3E3B830039E013 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				840AF33F1C5B718E009BFADE /* PhotoInfoCell.h */,
+				840AF3401C5B718E009BFADE /* PhotoInfoCell.m */,
 				844FFCD61C3E3C510039E013 /* WeatherInfoCell.h */,
 				844FFCD71C3E3C510039E013 /* WeatherInfoCell.m */,
 				844FFCDC1C3E48F80039E013 /* FDTableViewCell.h */,
@@ -583,6 +611,8 @@
 				846CFBF51C4C98E9007AF720 /* WeiboRepostCell.m */,
 				8469FCBE1C4F763A00CF2F3F /* WeiboActionCell.h */,
 				8469FCBF1C4F763A00CF2F3F /* WeiboActionCell.m */,
+				840E5DC81C5B40E50055F56D /* AlbumInfoCell.h */,
+				840E5DC91C5B40E50055F56D /* AlbumInfoCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -821,6 +851,7 @@
 				848353741C3F9F67007F4AD2 /* RSSChannel.m in Sources */,
 				8469FCC01C4F763A00CF2F3F /* WeiboActionCell.m in Sources */,
 				842C9D3C1C3A7296003FAEBD /* NewsViewController.m in Sources */,
+				840AF3411C5B718E009BFADE /* PhotoInfoCell.m in Sources */,
 				846CFBF31C4C981A007AF720 /* RepostListViewController.m in Sources */,
 				842C9D711C3BB35C003FAEBD /* CityModel.m in Sources */,
 				8483537A1C3FA177007F4AD2 /* NewsItemCell.m in Sources */,
@@ -831,6 +862,7 @@
 				848353641C3F91B1007F4AD2 /* SinaRSSApi.m in Sources */,
 				8483536E1C3F934B007F4AD2 /* RSSRoot.m in Sources */,
 				846CFBF01C4C95CA007AF720 /* WeiboRepostList.m in Sources */,
+				840E5DCD1C5B44000055F56D /* NewAlbumViewController.m in Sources */,
 				842C9D381C3A7263003FAEBD /* WeatherViewController.m in Sources */,
 				846CFBED1C4C8882007AF720 /* CommetsListViewController.m in Sources */,
 				84B528221C4E1E6000AE8149 /* WeiboFavoritesList.m in Sources */,
@@ -853,6 +885,7 @@
 				84E34DD11C489BAB002BB573 /* WeiboInfo.m in Sources */,
 				846AD6F81C50821D009F9BF5 /* RSSChannelDetail.m in Sources */,
 				841EA11B1C3F490A005BB9C1 /* AreaPickView.m in Sources */,
+				840AF33E1C5B6C14009BFADE /* QiniuFileUploadManager.m in Sources */,
 				844FFCDB1C3E43FE0039E013 /* FDTableViewController.m in Sources */,
 				84E34DCB1C4886E5002BB573 /* WeiboListViewController.m in Sources */,
 				84E34DDD1C48C179002BB573 /* WeiboDateTimeConverter.m in Sources */,
@@ -867,6 +900,7 @@
 				84E34D771C479A85002BB573 /* UsersListViewController.m in Sources */,
 				84E34DF21C48F1FE002BB573 /* WeiboCommentInfo.m in Sources */,
 				841EA1181C3F488B005BB9C1 /* XWindowStack.m in Sources */,
+				840E5DC71C5B40230055F56D /* MyAlbumsViewController.m in Sources */,
 				84B528251C4E1E7500AE8149 /* FavoriteInfo.m in Sources */,
 				84E34DDA1C48B827002BB573 /* UIColor+Extents.m in Sources */,
 				846CFBF61C4C98E9007AF720 /* WeiboRepostCell.m in Sources */,
@@ -879,6 +913,8 @@
 				84E34DF81C48F281002BB573 /* WeiboCommentCell.m in Sources */,
 				84E34DE91C48CE15002BB573 /* WeiboDetailViewController.m in Sources */,
 				846B20CE1C5A21EA003193E0 /* NewsListViewController.m in Sources */,
+				840E5DCA1C5B40E50055F56D /* AlbumInfoCell.m in Sources */,
+				840AF33B1C5B67D2009BFADE /* AlbumPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

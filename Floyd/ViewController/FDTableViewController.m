@@ -64,4 +64,13 @@
     [alert show];
   }
 }
+
+#pragma MBProgressHUD
+- (void)showHUD {
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hideAllHUDs {
+  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
 @end

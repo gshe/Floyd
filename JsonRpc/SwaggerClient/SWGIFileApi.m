@@ -1,16 +1,16 @@
-#import "SWGFileApi.h"
+#import "SWGIFileApi.h"
 #import "SWGQueryParamCollection.h"
 #import "SWGError.h"
 #import "SWGTokenInfo.h"
 
 
-@interface SWGFileApi ()
+@interface SWGIFileApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation SWGFileApi
+@implementation SWGIFileApi
 
-static SWGFileApi* singletonAPI = nil;
+static SWGIFileApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static SWGFileApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(SWGFileApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(SWGIFileApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[SWGFileApi alloc] init];
+        singletonAPI = [[SWGIFileApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(SWGFileApi*) sharedAPI {
++(SWGIFileApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[SWGFileApi alloc] init];
+        singletonAPI = [[SWGIFileApi alloc] init];
     }
     return singletonAPI;
 }

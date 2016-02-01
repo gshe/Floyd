@@ -13,6 +13,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor whiteColor];
+  self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 #pragma Action
@@ -26,5 +27,14 @@
         otherButtonTitles:nil, nil];
     [alert show];
   }
+}
+
+#pragma MBProgressHUD
+- (void)showHUD {
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hideAllHUDs {
+  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 @end

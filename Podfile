@@ -17,6 +17,7 @@ pod 'XMLDictionary'
 pod 'ICViewPager'
 pod 'MJRefresh'
 pod 'Qiniu', '~> 7.0'
+pod 'MWPhotoBrowser'
 pod 'SwaggerClient', :path => 'JsonRpc'
 
 target 'Floyd' do

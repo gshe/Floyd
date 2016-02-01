@@ -13,6 +13,7 @@
 #import "WeiboUserInfoViewController.h"
 #import "QiniuFileUploaderViewController.h"
 #import "UserDetailViewController.h"
+#import "MyAlbumsViewController.h"
 
 @interface ProfileTableViewController () <UIAlertViewDelegate>
 @property(nonatomic, strong) NITableViewActions *action;
@@ -89,6 +90,15 @@
                                    image:[UIImage imageNamed:@"qiniu"]]
          tapSelector:@selector(qiniuTapped)];
   [tableContents addObject:qiniu];
+	
+  if ([UserManager sharedInstance].isLoggedIn) {
+    NICellObject *myAlbum = [self.action
+        attachToObject:[NITitleCellObject
+                           objectWithTitle:@"我的相册"
+                                     image:[UIImage imageNamed:@"me"]]
+           tapSelector:@selector(myAlbumTapped)];
+    [tableContents addObject:myAlbum];
+  }
 
   self.tableView.delegate = [self.action forwardingTo:self];
   [self setTableData:tableContents];
@@ -145,6 +155,12 @@
 - (void)qiniuTapped {
   QiniuFileUploaderViewController *vc =
       [[QiniuFileUploaderViewController alloc] initWithNibName:nil bundle:nil];
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)myAlbumTapped {
+  MyAlbumsViewController *vc =
+      [[MyAlbumsViewController alloc] initWithNibName:nil bundle:nil];
   [self.navigationController pushViewController:vc animated:YES];
 }
 

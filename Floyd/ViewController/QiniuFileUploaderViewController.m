@@ -8,7 +8,7 @@
 
 #import "QiniuFileUploaderViewController.h"
 #import "qiniuSdk.h"
-#import "SWGFileApi.h"
+#import "SWGIFileApi.h"
 
 @interface QiniuFileUploaderViewController ()
 @property(nonatomic, strong) QNUploadManager *upManager;
@@ -46,7 +46,7 @@
 }
 
 - (void)startUpload:(id)sender {
-  [[SWGFileApi sharedAPI]
+  [[SWGIFileApi sharedAPI]
       uploadTokenGetWithCompletionBlock:^(SWGTokenInfo *output,
                                           NSError *error) {
         self.uploadToken = output.token;
