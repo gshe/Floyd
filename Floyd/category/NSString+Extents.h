@@ -12,4 +12,7 @@
 - (CGFloat)lineBreakSizeOfStringwithFont:(UIFont *)font
                                 maxwidth:(CGFloat)width
                            lineBreakMode:(NSLineBreakMode)lineBreakMode;
+- (CGSize)lineBreakSizeExOfStringwithFont:(UIFont *)font
+                                 maxwidth:(CGFloat)width
+                            lineBreakMode:(NSLineBreakMode)lineBreakMode;
 @end

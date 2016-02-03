@@ -233,6 +233,7 @@
   for (SWGPhotoInfo *info in self.photos) {
     NSString *url = QINIU_FILE_URL_ORIGINAL(info.url);
     MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:url]];
+    photo.caption = info.name;
     [self.photoBrowseArr addObject:photo];
   }
   MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];

@@ -14,6 +14,11 @@
 #import "QiniuFileUploaderViewController.h"
 #import "UserDetailViewController.h"
 #import "MyAlbumsViewController.h"
+#import "MMDrawerController.h"
+#import "V2ExNodeListViewController.h"
+#import "V2ExTopicListViewController.h"
+#import "MyV2ExProfileViewController.h"
+#import "MMExampleDrawerVisualStateManager.h"
 
 @interface ProfileTableViewController () <UIAlertViewDelegate>
 @property(nonatomic, strong) NITableViewActions *action;
@@ -90,7 +95,7 @@
                                    image:[UIImage imageNamed:@"qiniu"]]
          tapSelector:@selector(qiniuTapped)];
   [tableContents addObject:qiniu];
-	
+
   if ([UserManager sharedInstance].isLoggedIn) {
     NICellObject *myAlbum = [self.action
         attachToObject:[NITitleCellObject
@@ -99,6 +104,13 @@
            tapSelector:@selector(myAlbumTapped)];
     [tableContents addObject:myAlbum];
   }
+
+  NICellObject *v2Ex = [self.action
+      attachToObject:[NITitleCellObject
+                         objectWithTitle:@"V2Ex"
+                                   image:[UIImage imageNamed:@"me"]]
+         tapSelector:@selector(v2ExTapped)];
+  [tableContents addObject:v2Ex];
 
   self.tableView.delegate = [self.action forwardingTo:self];
   [self setTableData:tableContents];
@@ -162,6 +174,46 @@
   MyAlbumsViewController *vc =
       [[MyAlbumsViewController alloc] initWithNibName:nil bundle:nil];
   [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)v2ExTapped {
+  V2ExNodeListViewController *rightVC =
+      [[V2ExNodeListViewController alloc] initWithNibName:nil bundle:nil];
+  V2ExTopicListViewController *mainVC =
+      [[V2ExTopicListViewController alloc] initWithNibName:nil bundle:nil];
+  MyV2ExProfileViewController *leftVC =
+      [[MyV2ExProfileViewController alloc] initWithNibName:nil bundle:nil];
+  UINavigationController *mainNavi =
+      [[UINavigationController alloc] initWithRootViewController:mainVC];
+  UINavigationController *rightNavi =
+      [[UINavigationController alloc] initWithRootViewController:rightVC];
+  rightVC.delegate = mainVC;
+  leftVC.delegate = mainVC;
+  MMDrawerController *v2ExController =
+      [[MMDrawerController alloc] initWithCenterViewController:mainNavi
+                                      leftDrawerViewController:leftVC
+                                     rightDrawerViewController:rightNavi];
+  [v2ExController setShowsShadow:NO];
+  [v2ExController setRestorationIdentifier:@"MMDrawer3"];
+  [v2ExController setMaximumLeftDrawerWidth:150];
+  [v2ExController setMaximumRightDrawerWidth:150];
+  [v2ExController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+  [v2ExController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+  [v2ExController
+      setDrawerVisualStateBlock:^(MMDrawerController *drawerController,
+                                  MMDrawerSide drawerSide,
+                                  CGFloat percentVisible) {
+        MMDrawerControllerDrawerVisualStateBlock block;
+        block = [[MMExampleDrawerVisualStateManager sharedManager]
+            drawerVisualStateBlockForDrawerSide:drawerSide];
+        if (block) {
+          block(drawerController, drawerSide, percentVisible);
+        }
+      }];
+
+  [self.navigationController presentViewController:v2ExController
+                                          animated:YES
+                                        completion:nil];
 }
 
 #pragma UIAlertViewDelegate
