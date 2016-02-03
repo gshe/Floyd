@@ -10,4 +10,5 @@
 
 @interface FDWebViewController : FDViewController
 @property(nonatomic, strong) NSString *urlString;
+@property(nonatomic, assign) BOOL isShowToolBar;
 @end

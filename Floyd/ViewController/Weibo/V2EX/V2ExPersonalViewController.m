@@ -29,9 +29,11 @@
   headerView.backgroundColor = [UIColor ex_globalBackgroundColor];
   self.avatarView = [UIImageView new];
   self.userName = [UILabel new];
+  self.userName.font = Font_15;
   self.userName.textColor = [UIColor ex_mainTextColor];
   self.tagLine = [UILabel new];
   self.tagLine.textColor = [UIColor ex_subTextColor];
+  self.tagLine.font = Font_12;
   [headerView addSubview:self.avatarView];
   [headerView addSubview:self.userName];
   [headerView addSubview:self.tagLine];
@@ -109,10 +111,13 @@
   self.tableView.delegate = [self.action forwardingTo:self];
   [self setTableData:contents];
 }
+
 - (void)topicTapped {
+	
 }
 
 - (void)replyTapped {
+	
 }
 #pragma action
 
