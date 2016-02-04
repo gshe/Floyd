@@ -19,6 +19,7 @@
 #import "V2ExTopicListViewController.h"
 #import "MyV2ExProfileViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
+#import "FDWebViewController.h"
 
 @interface ProfileTableViewController () <UIAlertViewDelegate>
 @property(nonatomic, strong) NITableViewActions *action;
@@ -111,6 +112,19 @@
                                    image:[UIImage imageNamed:@"me"]]
          tapSelector:@selector(v2ExTapped)];
   [tableContents addObject:v2Ex];
+  NICellObject *blog = [self.action
+      attachToObject:[NITitleCellObject
+                         objectWithTitle:@"个人博客"
+                                   image:[UIImage imageNamed:@"me"]]
+         tapSelector:@selector(blogTapped)];
+  [tableContents addObject:blog];
+
+  NICellObject *cnblog = [self.action
+      attachToObject:[NITitleCellObject
+                         objectWithTitle:@"博客园"
+                                   image:[UIImage imageNamed:@"me"]]
+         tapSelector:@selector(cnblogTapped)];
+  [tableContents addObject:cnblog];
 
   self.tableView.delegate = [self.action forwardingTo:self];
   [self setTableData:tableContents];
@@ -214,6 +228,20 @@
   [self.navigationController presentViewController:v2ExController
                                           animated:YES
                                         completion:nil];
+}
+
+- (void)blogTapped {
+  FDWebViewController *blogVC =
+      [[FDWebViewController alloc] initWithNibName:nil bundle:nil];
+  blogVC.urlString = @"http://www.gshe.xyz";
+  [self.navigationController pushViewController:blogVC animated:YES];
+}
+
+- (void)cnblogTapped {
+  FDWebViewController *blogVC =
+      [[FDWebViewController alloc] initWithNibName:nil bundle:nil];
+  blogVC.urlString = @"http://www.cnblogs.com/gshe/";
+  [self.navigationController pushViewController:blogVC animated:YES];
 }
 
 #pragma UIAlertViewDelegate

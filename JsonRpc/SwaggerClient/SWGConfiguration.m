@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"http://localhost:3000/v1";
+        self.host = @"http://ec2-52-192-56-133.ap-northeast-1.compute.amazonaws.com/v1";
         self.username = @"";
         self.password = @"";
         self.tempFolderPath = nil;

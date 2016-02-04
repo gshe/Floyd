@@ -9,10 +9,10 @@
 #import "FDWebViewController.h"
 @interface FDWebViewController () <UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
-@property(nonatomic, strong) UIView *toolbar;
-@property(nonatomic, strong) UIButton *goBackButton;
-@property(nonatomic, strong) UIButton *goForwardButton;
-@property(nonatomic, strong) UIButton *refreshButton;
+@property(nonatomic, strong) UIBarButtonItem *goBackButton;
+@property(nonatomic, strong) UIBarButtonItem *goForwardButton;
+@property(nonatomic, strong) UIBarButtonItem *refreshButton;
+@property(nonatomic, strong) UIBarButtonItem *stopButton;
 @end
 
 @implementation FDWebViewController
@@ -24,65 +24,45 @@
 
   [self.view addSubview:self.webView];
   self.view.backgroundColor = [UIColor whiteColor];
-  self.toolbar = [UIView new];
-  self.toolbar.backgroundColor = [UIColor whiteColor];
-  [self.view addSubview:self.toolbar];
-  [self.toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.equalTo(self.view);
-    make.right.equalTo(self.view);
-    make.bottom.equalTo(self.view);
-    make.height.mas_equalTo(44);
-  }];
-
   [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.equalTo(self.view);
     make.right.equalTo(self.view);
     make.top.equalTo(self.view);
-    make.bottom.equalTo(self.toolbar.mas_top);
+    make.bottom.equalTo(self.view);
   }];
 
-  self.goBackButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  self.goForwardButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  self.refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self.goBackButton setImage:[UIImage imageNamed:@"Browser_Icon_Backward"]
-                     forState:UIControlStateNormal];
-  [self.goBackButton addTarget:self
-                        action:@selector(goBackPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-  [self.goForwardButton setImage:[UIImage imageNamed:@"Browser_Icon_Forward"]
-                        forState:UIControlStateNormal];
-  [self.goForwardButton addTarget:self
-                           action:@selector(goForwardPressed:)
-                 forControlEvents:UIControlEventTouchUpInside];
-  [self.refreshButton setImage:[UIImage imageNamed:@"Browser_Icon_Refresh"]
-                      forState:UIControlStateNormal];
-  [self.refreshButton addTarget:self
-                         action:@selector(refreshPressed:)
-               forControlEvents:UIControlEventTouchUpInside];
-  [self.toolbar addSubview:self.goBackButton];
-  [self.toolbar addSubview:self.goForwardButton];
-  [self.toolbar addSubview:self.refreshButton];
-
-  [self.goBackButton mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.centerY.equalTo(self.toolbar);
-    make.left.equalTo(self.toolbar).offset(15);
-    make.width.mas_equalTo(44);
-    make.height.mas_equalTo(44);
-  }];
-
-  [self.goForwardButton mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.centerY.equalTo(self.toolbar);
-    make.left.equalTo(self.goBackButton.mas_right).offset(15);
-    make.width.mas_equalTo(44);
-    make.height.mas_equalTo(44);
-  }];
-
-  [self.refreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.centerY.equalTo(self.toolbar);
-    make.left.equalTo(self.goForwardButton.mas_right).offset(15);
-    make.width.mas_equalTo(44);
-    make.height.mas_equalTo(44);
-  }];
+  self.goBackButton = [[UIBarButtonItem alloc]
+      initWithImage:[UIImage imageNamed:@"Browser_Icon_Backward"]
+              style:UIBarButtonItemStylePlain
+             target:self
+             action:@selector(goBackPressed:)];
+  self.goForwardButton = [[UIBarButtonItem alloc]
+      initWithImage:[UIImage imageNamed:@"Browser_Icon_Forward"]
+              style:UIBarButtonItemStylePlain
+             target:self
+             action:@selector(goForwardPressed:)];
+  self.refreshButton = [[UIBarButtonItem alloc]
+      initWithImage:[UIImage imageNamed:@"Browser_Icon_Refresh"]
+              style:UIBarButtonItemStylePlain
+             target:self
+             action:@selector(refreshPressed:)];
+  self.stopButton = [[UIBarButtonItem alloc]
+      initWithImage:[UIImage imageNamed:@"Browser_close"]
+              style:UIBarButtonItemStylePlain
+             target:self
+             action:@selector(stopPressed:)];
+  UIBarButtonItem *flexItem = [[UIBarButtonItem alloc]
+      initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                           target:nil
+                           action:nil];
+  [self
+      setToolbarItems:[NSArray arrayWithObjects:flexItem, self.goBackButton,
+                                                flexItem, self.goForwardButton,
+                                                flexItem, self.refreshButton,
+                                                flexItem, self.stopButton,
+                                                flexItem, nil]
+             animated:YES];
+  self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -108,9 +88,15 @@
   [self.webView reload];
 }
 
+- (void)stopPressed:(id)sender {
+  [self.webView stopLoading];
+  [MBProgressHUD hideAllHUDsForView:self.webView animated:YES];
+}
+
 #pragma UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView {
   [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
+  self.stopButton.enabled = self.webView.isLoading;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -118,6 +104,13 @@
 
   self.goBackButton.enabled = [self.webView canGoBack];
   self.goForwardButton.enabled = [self.webView canGoForward];
+  self.stopButton.enabled = self.webView.isLoading;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+  self.goBackButton.enabled = [self.webView canGoBack];
+  self.goForwardButton.enabled = [self.webView canGoForward];
+  self.stopButton.enabled = self.webView.isLoading;
 }
 
 @end
