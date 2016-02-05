@@ -125,9 +125,13 @@
       [NSArray arrayWithObjects:weatherDrawerController, newsDrawerController,
                                 nav3, nav4, nil];
   NSInteger index = 0;
+  UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
+  UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
   NSArray *tabBarItemImages = @[ @"weather", @"news", @"LOGO", @"me" ];
   NSArray *tabBarItemTitle = @[ @"天气", @"资讯", @"微博", @"我的" ];
   for (RDVTabBarItem *itemTab in [[tabVC tabBar] items]) {
+    [itemTab setBackgroundSelectedImage:finishedImage
+                    withUnselectedImage:unfinishedImage];
     UIImage *selectedimage = [UIImage imageNamed:tabBarItemImages[index]];
     [itemTab setFinishedSelectedImage:selectedimage
           withFinishedUnselectedImage:selectedimage];
