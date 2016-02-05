@@ -10,6 +10,7 @@
 
 @interface FDTableViewController : UITableViewController
 @property(nonatomic, strong) NIMutableTableViewModel *model;
+@property(nonatomic, assign, readonly) BOOL tabBarInitStatus;
 - (void)setTableData:(NSArray *)tableCells;
 
 - (void)showError:(NSError *)error;

@@ -19,6 +19,7 @@ pod 'MJRefresh'
 pod 'Qiniu', '~> 7.0'
 pod 'MWPhotoBrowser'
 pod 'SwaggerClient', :path => 'JsonRpc'
+pod 'RDVTabBarController'
 
 target 'Floyd' do
 

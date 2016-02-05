@@ -25,7 +25,15 @@
   self.title = self.whatFind;
   [self loadData];
 }
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
 - (void)loadData {
 
   if ([self.whatFind isEqualToString:@"followers"]) {

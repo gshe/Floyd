@@ -12,6 +12,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+	_tabBarInitStatus = self.rdv_tabBarController.tabBarHidden;
   self.view.backgroundColor = [UIColor whiteColor];
   self.edgesForExtendedLayout = UIRectEdgeNone;
 }

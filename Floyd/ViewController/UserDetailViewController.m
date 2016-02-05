@@ -38,6 +38,16 @@
   [self refreshUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
+
 - (void)createHeaderView {
   _tableHeaderView =
       [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH(self.view), 100)];

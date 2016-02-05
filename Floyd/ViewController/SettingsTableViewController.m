@@ -20,7 +20,15 @@
 
   [self refreshUI];
 }
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
 - (void)refreshUI {
   _actions = [[NITableViewActions alloc] initWithTarget:self];
   NSMutableArray *contents = [@[] mutableCopy];

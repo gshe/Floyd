@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.title = @"未来天气预报";
-
+  self.rdv_tabBarController.tabBarHidden = YES;
   NSMutableArray *contents = [@[] mutableCopy];
   if (self.curWeather) {
     NSInteger index = 1;
@@ -45,6 +45,11 @@
   }
 
   [self setTableData:contents];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
 }
 
 - (void)didReceiveMemoryWarning {

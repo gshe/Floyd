@@ -27,6 +27,16 @@
   [self requestData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
+
 - (void)refreshUI {
   NSMutableArray *contents = [@[] mutableCopy];
   if (self.albums) {

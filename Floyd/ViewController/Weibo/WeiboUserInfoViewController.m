@@ -23,7 +23,15 @@
   [super viewDidLoad];
   [self loadUI];
 }
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
 - (void)loadUI {
   if (!self.userInfo) {
     return;

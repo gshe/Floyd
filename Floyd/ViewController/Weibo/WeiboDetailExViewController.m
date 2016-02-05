@@ -46,6 +46,16 @@
   [self.tableView.mj_header beginRefreshing];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.rdv_tabBarController.tabBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
+
 - (void)loadNewData {
   switch (self.actionMode) {
   case FDActionMode_Comment:

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FDViewController : UIViewController
+@property(nonatomic, assign, readonly) BOOL tabBarInitStatus;
 - (void)showError:(NSError *)error;
 
 - (void)showHUD;

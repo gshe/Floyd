@@ -90,12 +90,12 @@
   }
 
   [tableContents addObject:@"其他"];
-  NICellObject *qiniu = [self.action
-      attachToObject:[NITitleCellObject
-                         objectWithTitle:@"七牛云存储"
-                                   image:[UIImage imageNamed:@"qiniu"]]
-         tapSelector:@selector(qiniuTapped)];
-  [tableContents addObject:qiniu];
+//  NICellObject *qiniu = [self.action
+//      attachToObject:[NITitleCellObject
+//                         objectWithTitle:@"七牛云存储"
+//                                   image:[UIImage imageNamed:@"qiniu"]]
+//         tapSelector:@selector(qiniuTapped)];
+//  [tableContents addObject:qiniu];
 
   if ([UserManager sharedInstance].isLoggedIn) {
     NICellObject *myAlbum = [self.action

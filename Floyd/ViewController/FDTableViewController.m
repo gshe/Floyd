@@ -16,6 +16,15 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  _tabBarInitStatus = self.rdv_tabBarController.tabBarHidden;
+  if (self.rdv_tabBarController.tabBar.translucent) {
+    CGFloat tabBarHeight =
+        CGRectGetHeight(self.rdv_tabBarController.tabBar.frame);
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, tabBarHeight, 0);
+
+    self.tableView.contentInset = insets;
+    self.tableView.scrollIndicatorInsets = insets;
+  }
 }
 
 - (void)didReceiveMemoryWarning {

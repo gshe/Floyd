@@ -72,17 +72,9 @@
           block(drawerController, drawerSide, percentVisible);
         }
       }];
-  weatherDrawerController.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:@"天气"
-                                    image:[UIImage imageNamed:@"weather"]
-                                      tag:1];
 
   NewsViewController *newsVC =
       [[NewsViewController alloc] initWithNibName:nil bundle:nil];
-  newsVC.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:@"资讯"
-                                    image:[UIImage imageNamed:@"news"]
-                                      tag:2];
 
   NewsChannelSelectViewController *newsChannelSelectVc =
       [[NewsChannelSelectViewController alloc] initWithNibName:nil bundle:nil];
@@ -117,36 +109,44 @@
 
   newsVC.channelSelectVC = newsChannelSelectVc;
   newsChannelSelectVc.delegate = newsVC;
-  newsDrawerController.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:@"资讯"
-                                    image:[UIImage imageNamed:@"news"]
-                                      tag:2];
 
   MyWeiboViewController *weiboVC =
       [[MyWeiboViewController alloc] initWithNibName:nil bundle:nil];
-  weiboVC.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:@"微博"
-                                    image:[UIImage imageNamed:@"LOGO"]
-                                      tag:3];
-  ;
+
   ProfileTableViewController *profileVC =
       [[ProfileTableViewController alloc] initWithNibName:nil bundle:nil];
-  profileVC.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:@"我的"
-                                    image:[UIImage imageNamed:@"me"]
-                                      tag:4];
-  ;
-
   UINavigationController *nav3 =
       [[UINavigationController alloc] initWithRootViewController:weiboVC];
 
   UINavigationController *nav4 =
       [[UINavigationController alloc] initWithRootViewController:profileVC];
-  UITabBarController *tabVC = [[UITabBarController alloc] init];
+  RDVTabBarController *tabVC = [[RDVTabBarController alloc] init];
   tabVC.viewControllers =
       [NSArray arrayWithObjects:weatherDrawerController, newsDrawerController,
                                 nav3, nav4, nil];
+  NSInteger index = 0;
+  NSArray *tabBarItemImages = @[ @"weather", @"news", @"LOGO", @"me" ];
+  NSArray *tabBarItemTitle = @[ @"天气", @"资讯", @"微博", @"我的" ];
+  for (RDVTabBarItem *itemTab in [[tabVC tabBar] items]) {
+    UIImage *selectedimage = [UIImage imageNamed:tabBarItemImages[index]];
+    [itemTab setFinishedSelectedImage:selectedimage
+          withFinishedUnselectedImage:selectedimage];
+    itemTab.title = tabBarItemTitle[index];
+    index++;
+  }
+
   tabVC.selectedIndex = 0;
+  RDVTabBar *tabBar = tabVC.tabBar;
+
+  // After the tabBarController initialization
+  tabBar.translucent = YES;
+
+  // Customize the tabBar background
+  tabBar.backgroundView.backgroundColor = [UIColor colorWithRed:245 / 255.0
+                                                          green:245 / 255.0
+                                                           blue:245 / 255.0
+                                                          alpha:0.9];
+
   return tabVC;
 }
 
@@ -163,15 +163,11 @@
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-  //  UIColor *tintColor = [UIColor colorWithRed:29.0 / 255.0
-  //                                       green:173.0 / 255.0
-  //                                        blue:234.0 / 255.0
-  //                                       alpha:1.0];
-  //  [self.window setTintColor:tintColor];
   UIViewController *rootVC = [self getRootViewController];
   self.window.rootViewController = rootVC;
   [self.window makeKeyAndVisible];
   [XWindowStack pushWindow:self.window];
+  [NSThread sleepForTimeInterval:2];
   return YES;
 }
 

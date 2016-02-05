@@ -62,14 +62,24 @@
                                                 flexItem, self.stopButton,
                                                 flexItem, nil]
              animated:YES];
-  self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+	 self.rdv_tabBarController.tabBarHidden = YES;
   NSURLRequest *request =
       [NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]];
   [self.webView loadRequest:request];
+  [UIView animateWithDuration:0.25
+                   animations:^{
+                     self.navigationController.toolbarHidden = NO;
+                   }];
+	
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:YES];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
 }
 
 - (void)goBackPressed:(id)sender {

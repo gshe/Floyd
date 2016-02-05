@@ -14,7 +14,15 @@
   self.title = [NSString stringWithFormat:@"%@ 的微博信息", self.userInfo.name];
   [self loadData];
 }
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.rdv_tabBarController.tabBarHidden = YES;
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.rdv_tabBarController.tabBarHidden = self.tabBarInitStatus;
+}
 - (void)loadData {
   
 }
