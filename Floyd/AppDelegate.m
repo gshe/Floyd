@@ -18,6 +18,8 @@
 #import "XWindowStack.h"
 #import "MyWeiboViewController.h"
 #import "NewsChannelSelectViewController.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate () <WeiboSDKDelegate>
 
@@ -156,6 +158,7 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [Fabric with:@[ [Crashlytics class] ]];
 
   NSURLCache *cache =
       [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024

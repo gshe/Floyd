@@ -115,6 +115,7 @@
 		84E34DDD1C48C179002BB573 /* WeiboDateTimeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E34DDC1C48C179002BB573 /* WeiboDateTimeConverter.m */; };
 		84E34DF21C48F1FE002BB573 /* WeiboCommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E34DF11C48F1FE002BB573 /* WeiboCommentInfo.m */; };
 		84E34DF51C48F212002BB573 /* WeiboCommentInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E34DF41C48F212002BB573 /* WeiboCommentInfoList.m */; };
+		84E51A1E1C70203C00AC93D9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E51A1D1C70203C00AC93D9 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,6 +352,7 @@
 		84E34DF11C48F1FE002BB573 /* WeiboCommentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCommentInfo.m; sourceTree = "<group>"; };
 		84E34DF31C48F212002BB573 /* WeiboCommentInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCommentInfoList.h; sourceTree = "<group>"; };
 		84E34DF41C48F212002BB573 /* WeiboCommentInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCommentInfoList.m; sourceTree = "<group>"; };
+		84E51A1D1C70203C00AC93D9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 			files = (
 				847452E41C608050006D9B0B /* libxml2.2.tbd in Frameworks */,
 				842C9D511C3B9E46003FAEBD /* CoreLocation.framework in Frameworks */,
+				84E51A1E1C70203C00AC93D9 /* Crashlytics.framework in Frameworks */,
 				27D92A03569F339EEBCDC88F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +553,7 @@
 		842C9CF41C3A7193003FAEBD = {
 			isa = PBXGroup;
 			children = (
+				84E51A1D1C70203C00AC93D9 /* Crashlytics.framework */,
 				842C9CFF1C3A7193003FAEBD /* Floyd */,
 				842C9D1C1C3A7193003FAEBD /* FloydTests */,
 				842C9D271C3A7193003FAEBD /* FloydUITests */,
@@ -857,6 +861,7 @@
 				842C9CFB1C3A7193003FAEBD /* Resources */,
 				64FD3C6D4D1912C23D80E810 /* Embed Pods Frameworks */,
 				484F79DD31AE50B716C48AEB /* Copy Pods Resources */,
+				84E51A1C1C701FFA00AC93D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1005,6 +1010,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		84E51A1C1C701FFA00AC93D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 1a1f51d493f9d929a41c2ccc3559115d0d098ecc 16c4b5f629496f846c15025b7e9bbb208600be2c9c1b5ca2c5e96200fee68199";
 		};
 		D39F53594ED38AE7C6D3A593 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1261,6 +1279,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "./Floyd/Floyd-PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1304,6 +1326,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "./Floyd/Floyd-PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (

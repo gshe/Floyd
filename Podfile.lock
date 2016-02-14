@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DACircularProgress (2.3.1)
+  - Fabric (1.6.4)
   - FLEX (2.1.1)
   - FMDB (2.6):
     - FMDB/standard (= 2.6)
@@ -115,6 +116,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
+  - Fabric
   - FLEX (~> 2.0)
   - FMDB (~> 2.5)
   - ICViewPager
@@ -139,6 +141,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
   FLEX: 27b768fcae23a313a1eb115076d429180ca9b472
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   HappyDNS: 6d85942e64c28b4fa61f8c76580398f52d6d1d11
